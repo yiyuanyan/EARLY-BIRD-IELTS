@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "359809B01CF6A50F00E63B53"
+               BuildableName = "EARLY-BIRD-IELTS.app"
+               BlueprintName = "EARLY-BIRD-IELTS"
+               ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "359809C91CF6A51000E63B53"
+               BuildableName = "EARLY-BIRD-IELTSTests.xctest"
+               BlueprintName = "EARLY-BIRD-IELTSTests"
+               ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "359809D41CF6A51000E63B53"
+               BuildableName = "EARLY-BIRD-IELTSUITests.xctest"
+               BlueprintName = "EARLY-BIRD-IELTSUITests"
+               ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "359809B01CF6A50F00E63B53"
+            BuildableName = "EARLY-BIRD-IELTS.app"
+            BlueprintName = "EARLY-BIRD-IELTS"
+            ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "359809B01CF6A50F00E63B53"
+            BuildableName = "EARLY-BIRD-IELTS.app"
+            BlueprintName = "EARLY-BIRD-IELTS"
+            ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "359809B01CF6A50F00E63B53"
+            BuildableName = "EARLY-BIRD-IELTS.app"
+            BlueprintName = "EARLY-BIRD-IELTS"
+            ReferencedContainer = "container:EARLY-BIRD-IELTS.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
