@@ -82,6 +82,9 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tag = 100 + num;
+    UIView *footerView = [[UIView alloc] init];
+    footerView.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:footerView];
     [self.scrollView addSubview:tableView];
 }
 
