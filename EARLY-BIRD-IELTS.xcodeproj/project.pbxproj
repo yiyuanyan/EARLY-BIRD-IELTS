@@ -40,6 +40,7 @@
 		359809C41CF6A50F00E63B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359809C21CF6A50F00E63B53 /* LaunchScreen.storyboard */; };
 		359809CF1CF6A51000E63B53 /* EARLY_BIRD_IELTSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809CE1CF6A51000E63B53 /* EARLY_BIRD_IELTSTests.m */; };
 		359809DA1CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809D91CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m */; };
+		35C531E61D0524A200950172 /* Part1ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C531E51D0524A200950172 /* Part1ListTableViewController.m */; };
 		35E99F221CFD7D580090B8AC /* exercisesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E99F211CFD7D580090B8AC /* exercisesTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		359809D51CF6A51000E63B53 /* EARLY-BIRD-IELTSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EARLY-BIRD-IELTSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		359809D91CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EARLY_BIRD_IELTSUITests.m; sourceTree = "<group>"; };
 		359809DB1CF6A51000E63B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35C531E41D0524A200950172 /* Part1ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part1ListTableViewController.h; sourceTree = "<group>"; };
+		35C531E51D0524A200950172 /* Part1ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part1ListTableViewController.m; sourceTree = "<group>"; };
 		35E99F201CFD7D580090B8AC /* exercisesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exercisesTableViewCell.h; sourceTree = "<group>"; };
 		35E99F211CFD7D580090B8AC /* exercisesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = exercisesTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +167,8 @@
 				353222771D0022C8005DA5FD /* Part1ViewController.h */,
 				353222781D0022C8005DA5FD /* Part1ViewController.m */,
 				354A00D91D01549200607207 /* Part1View.xib */,
+				35C531E41D0524A200950172 /* Part1ListTableViewController.h */,
+				35C531E51D0524A200950172 /* Part1ListTableViewController.m */,
 			);
 			path = Part1;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 				359809B91CF6A50F00E63B53 /* AppDelegate.m in Sources */,
 				357AD4591CF6C6D100BA2063 /* MKAnnotationView+WebCache.m in Sources */,
 				357AD4781CF6C6D900BA2063 /* AFNetworkReachabilityManager.m in Sources */,
+				35C531E61D0524A200950172 /* Part1ListTableViewController.m in Sources */,
 				357AD45D1CF6C6D100BA2063 /* SDWebImageDecoder.m in Sources */,
 				357AD4641CF6C6D100BA2063 /* UIImage+MultiFormat.m in Sources */,
 				357AD45F1CF6C6D100BA2063 /* SDWebImageDownloaderOperation.m in Sources */,

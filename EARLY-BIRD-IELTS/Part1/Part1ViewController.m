@@ -8,12 +8,13 @@
 
 #import "Part1ViewController.h"
 #import "AFNetworking.h"
+#import "Part1ListTableViewController.h"
 #define kFont [UIFont fontWithName:@"Arial" size:14]
 #define kWidth [UIScreen mainScreen].bounds.size.width
 @interface Part1ViewController ()
 
 @property(nonatomic, strong)NSMutableArray *allTopBtn;
-@property(nonatomic, strong)NSArray *rsArray;
+@property(nonatomic, strong)NSMutableDictionary *rsArray;
 @end
 
 @implementation Part1ViewController
@@ -22,6 +23,7 @@
     [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
     self.allTopBtn = [NSMutableArray array];
+    self.rsArray = [NSMutableDictionary dictionary];
     // Do any additional setup after loading the view.
     
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
@@ -60,7 +62,7 @@
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(btnX, -64, btnSize.width, 30)];
         [btn setTitle:d[@"ename"] forState:UIControlStateNormal];
         btn.tag = 200 + i;
-        [btn setTitleColor:[UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1] forState:UIControlStateNormal];
         if(btn.tag == 200){
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         }
@@ -72,7 +74,6 @@
         //调用网络接口获取table的数据
         
         NSString *url = [NSString stringWithFormat:@"http://testapp.benniaoyasi.com/api.php?appid=1&m=api&c=ncategory&a=listcategory&devtype=android&version=2.0&uuid=123&leval=%@",d[@"evalue"]];
-        NSLog(@"%f",tableViewX);
         [self getNetWorkingJSON:url type:@"tableView" tableViewX:tableViewX tableViewTag:i];
         allBtnX += btnSize.width;
         
@@ -95,7 +96,11 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.tag = 100 + tableViewTag;
-    self.rsArray = infoArray;
+    //int tableTag = 100 + tableViewTag;
+    NSString *str = [NSString stringWithFormat:@"%d",100+tableViewTag];
+    //self.rsArray[tableTag] = infoArray;
+    //[self.rsArray[str] addObject:infoArray];
+    [self.rsArray setObject:infoArray forKey:str];
     [self.tableScrollView addSubview:tableView];
     self.tableScrollView.contentSize = CGSizeMake(kWidth * self.allTopBtn.count, 0);
     [tableView reloadData];
@@ -137,7 +142,8 @@
 #pragma mark --tableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.rsArray.count;
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)tableView.tag];
+    return [self.rsArray[str] count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell"];
@@ -146,7 +152,12 @@
     }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     cell.textLabel.font = kFont;
-    cell.textLabel.text = self.rsArray[indexPath.row][@"chinese"];
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)tableView.tag];
+    cell.textLabel.text = self.rsArray[str][indexPath.row][@"chinese"];
+    tableView.separatorStyle = UITableViewScrollPositionNone;
+    if(indexPath.row % 2 == 0){
+        cell.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
+    }
     
     
     return  cell;
@@ -155,5 +166,14 @@
 {
     return 40;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)tableView.tag];
+    Part1ListTableViewController *part1 = [[Part1ListTableViewController alloc] init];
+    part1.chinese = self.rsArray[str][indexPath.row][@"chinese"];
+    part1.english = self.rsArray[str][indexPath.row][@"english"];
+    part1.cid = self.rsArray[str][indexPath.row][@"id"];
+    part1.title = self.rsArray[str][indexPath.row][@"english"];
+    [self.navigationController pushViewController:part1 animated:YES];
+}
 @end
