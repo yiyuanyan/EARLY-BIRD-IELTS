@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -32,13 +33,59 @@
                     <view key="view" contentMode="scaleToFill" id="Cw4-yS-XYh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="MFw-2M-TJe"/>
+                    <connections>
+                        <segue destination="QZk-6j-r0U" kind="push" identifier="part1" id="y6B-dQ-oM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJf-Cd-1vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="235"/>
+        </scene>
+        <!--Part1 View Controller-->
+        <scene sceneID="iyE-zQ-nmc">
+            <objects>
+                <viewController storyboardIdentifier="part1" id="QZk-6j-r0U" customClass="Part1ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gKr-Uq-EBo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nac-Lw-Gp0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dHH-nx-YTj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wz3-vr-KGb">
+                                <rect key="frame" x="0.0" y="64" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FQf-rv-VuG"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuS-jP-kRp">
+                                <rect key="frame" x="0.0" y="94" width="600" height="506"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wz3-vr-KGb" secondAttribute="trailing" constant="-20" id="KRl-WK-xNG"/>
+                            <constraint firstItem="wz3-vr-KGb" firstAttribute="leading" secondItem="dHH-nx-YTj" secondAttribute="leadingMargin" constant="-20" id="Yw1-ek-Sht"/>
+                            <constraint firstItem="Nac-Lw-Gp0" firstAttribute="top" secondItem="MuS-jP-kRp" secondAttribute="bottom" id="dQf-PM-lvG"/>
+                            <constraint firstItem="MuS-jP-kRp" firstAttribute="top" secondItem="wz3-vr-KGb" secondAttribute="bottom" id="fUN-2h-q7Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MuS-jP-kRp" secondAttribute="trailing" constant="-20" id="jip-ZR-n1V"/>
+                            <constraint firstItem="MuS-jP-kRp" firstAttribute="leading" secondItem="dHH-nx-YTj" secondAttribute="leadingMargin" constant="-20" id="qVT-H9-six"/>
+                            <constraint firstItem="wz3-vr-KGb" firstAttribute="top" secondItem="gKr-Uq-EBo" secondAttribute="bottom" id="x9D-8j-ccy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NW1-zE-EGQ"/>
+                    <connections>
+                        <outlet property="tableScrollView" destination="MuS-jP-kRp" id="2KO-k5-Ne1"/>
+                        <outlet property="topScrollView" destination="wz3-vr-KGb" id="iKq-fe-I29"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Znp-NO-y3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="235"/>
         </scene>
     </scenes>
 </document>

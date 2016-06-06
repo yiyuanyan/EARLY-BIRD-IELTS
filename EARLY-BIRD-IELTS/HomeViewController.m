@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
     // Do any additional setup after loading the view.
     UIButton *exercisesBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 80, 40)];
     [exercisesBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
@@ -43,9 +43,12 @@
     [self.navigationController pushViewController:exeView animated:YES];
 }
 -(void)part1View{
-    Part1ViewController *part1View = [[Part1ViewController alloc] init];
-    part1View.title = @"PART1";
-    [self.navigationController pushViewController:part1View animated:YES];
+//    UIStoryboard *part1Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController *part1Controller = [part1Storyboard instantiateViewControllerWithIdentifier:@"part1"];
+    Part1ViewController *part1Controller = [[Part1ViewController alloc] initWithNibName:@"Part1View" bundle:nil];
+    //[self.navigationController setNavigationBarHidden:NO];
+    part1Controller.title = @"PART1";
+    [self.navigationController pushViewController:part1Controller animated:YES];
 }
 /*
 #pragma mark - Navigation
