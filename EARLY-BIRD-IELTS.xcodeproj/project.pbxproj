@@ -40,6 +40,8 @@
 		359809C41CF6A50F00E63B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359809C21CF6A50F00E63B53 /* LaunchScreen.storyboard */; };
 		359809CF1CF6A51000E63B53 /* EARLY_BIRD_IELTSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809CE1CF6A51000E63B53 /* EARLY_BIRD_IELTSTests.m */; };
 		359809DA1CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809D91CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m */; };
+		35B3B68A1D065A1B00ED9CDE /* IntelligenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3B6891D065A1B00ED9CDE /* IntelligenceViewController.m */; };
+		35B3B6911D06ADB000ED9CDE /* IntelligenceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B3B6901D06ADB000ED9CDE /* IntelligenceTableViewCell.m */; };
 		35C531E61D0524A200950172 /* Part1ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C531E51D0524A200950172 /* Part1ListTableViewController.m */; };
 		35E99F221CFD7D580090B8AC /* exercisesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E99F211CFD7D580090B8AC /* exercisesTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,10 @@
 		359809D51CF6A51000E63B53 /* EARLY-BIRD-IELTSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EARLY-BIRD-IELTSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		359809D91CF6A51000E63B53 /* EARLY_BIRD_IELTSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EARLY_BIRD_IELTSUITests.m; sourceTree = "<group>"; };
 		359809DB1CF6A51000E63B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35B3B6881D065A1B00ED9CDE /* IntelligenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelligenceViewController.h; sourceTree = "<group>"; };
+		35B3B6891D065A1B00ED9CDE /* IntelligenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelligenceViewController.m; sourceTree = "<group>"; };
+		35B3B68F1D06ADB000ED9CDE /* IntelligenceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelligenceTableViewCell.h; sourceTree = "<group>"; };
+		35B3B6901D06ADB000ED9CDE /* IntelligenceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelligenceTableViewCell.m; sourceTree = "<group>"; };
 		35C531E41D0524A200950172 /* Part1ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part1ListTableViewController.h; sourceTree = "<group>"; };
 		35C531E51D0524A200950172 /* Part1ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part1ListTableViewController.m; sourceTree = "<group>"; };
 		35E99F201CFD7D580090B8AC /* exercisesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exercisesTableViewCell.h; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 				357AD47D1CF6C9F800BA2063 /* exercises */,
 				354FFB3D1CFEC735002F1272 /* Part1 */,
 				354FFB3E1CFEC735002F1272 /* Part2_3 */,
+				35B3B6871D0659F900ED9CDE /* Intelligence */,
 				359809B71CF6A50F00E63B53 /* AppDelegate.h */,
 				359809B81CF6A50F00E63B53 /* AppDelegate.m */,
 				359809BD1CF6A50F00E63B53 /* Main.storyboard */,
@@ -316,6 +323,25 @@
 				359809DB1CF6A51000E63B53 /* Info.plist */,
 			);
 			path = "EARLY-BIRD-IELTSUITests";
+			sourceTree = "<group>";
+		};
+		35B3B6871D0659F900ED9CDE /* Intelligence */ = {
+			isa = PBXGroup;
+			children = (
+				35B3B68E1D06AD8C00ED9CDE /* View */,
+				35B3B6881D065A1B00ED9CDE /* IntelligenceViewController.h */,
+				35B3B6891D065A1B00ED9CDE /* IntelligenceViewController.m */,
+			);
+			path = Intelligence;
+			sourceTree = "<group>";
+		};
+		35B3B68E1D06AD8C00ED9CDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35B3B68F1D06ADB000ED9CDE /* IntelligenceTableViewCell.h */,
+				35B3B6901D06ADB000ED9CDE /* IntelligenceTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		35E99F1F1CFD7D430090B8AC /* View */ = {
@@ -481,7 +507,9 @@
 				357AD45F1CF6C6D100BA2063 /* SDWebImageDownloaderOperation.m in Sources */,
 				359809B61CF6A50F00E63B53 /* main.m in Sources */,
 				357AD4621CF6C6D100BA2063 /* UIButton+WebCache.m in Sources */,
+				35B3B6911D06ADB000ED9CDE /* IntelligenceTableViewCell.m in Sources */,
 				357AD4611CF6C6D100BA2063 /* SDWebImagePrefetcher.m in Sources */,
+				35B3B68A1D065A1B00ED9CDE /* IntelligenceViewController.m in Sources */,
 				357AD4671CF6C6D100BA2063 /* UIImageView+WebCache.m in Sources */,
 				357AD45C1CF6C6D100BA2063 /* SDWebImageCompat.m in Sources */,
 				357AD4631CF6C6D100BA2063 /* UIImage+GIF.m in Sources */,

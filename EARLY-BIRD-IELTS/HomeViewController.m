@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "exercisesViewController.h"
 #import "Part1ViewController.h"
+#import "IntelligenceViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -28,7 +29,12 @@
     [part1 setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [part1 setTitle:@"Part1" forState:UIControlStateNormal];
     [part1 addTarget:self action:@selector(part1View) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *intelligenceBtn = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 80, 40)];
+    [intelligenceBtn setTitle:@"情报" forState:UIControlStateNormal];
+    [intelligenceBtn addTarget:self action:@selector(intelligenceView) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    [self.view addSubview:intelligenceBtn];
     [self.view addSubview:part1];
     [self.view addSubview:exercisesBtn];
 }
@@ -49,6 +55,12 @@
     //[self.navigationController setNavigationBarHidden:NO];
     part1Controller.title = @"PART1";
     [self.navigationController pushViewController:part1Controller animated:YES];
+}
+-(void)intelligenceView{
+    IntelligenceViewController *iView = [[IntelligenceViewController alloc] init];
+    [iView.navigationController setNavigationBarHidden:NO];
+    iView.title = @"情报";
+    [self.navigationController pushViewController:iView animated:YES];
 }
 /*
 #pragma mark - Navigation
