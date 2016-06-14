@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PostDetailsViewController : UIViewController
-
+@property(nonatomic, copy)NSString *postId;
 @end

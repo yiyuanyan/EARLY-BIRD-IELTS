@@ -10,7 +10,8 @@
  */
 
 #import "PostDetailsViewController.h"
-
+#import "AFNetworking.h"
+#define kWidth [UIScreen mainScreen].bounds.size.width
 @interface PostDetailsViewController ()
 
 @end
@@ -19,7 +20,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, kWidth, 40)];
+    topView.backgroundColor = [UIColor redColor];
     // Do any additional setup after loading the view.
+    
+    
+    //
+    [self.view addSubview:topView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +46,19 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark --自定义方法
+-(void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)getNetWorkingJSON:(NSString *)url{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 @end

@@ -10,6 +10,7 @@
 #import "IntelligenceTableViewCell.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "PostDetailsViewController.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
 @interface IntelligenceViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UIScrollView *topScrollView;
@@ -160,6 +161,13 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 60;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PostDetailsViewController *post = [[PostDetailsViewController alloc] init];
+    post.title = @"情报";
+    post.postId = self.info[indexPath.row][@"id"];
+    [self.navigationController pushViewController:post animated:YES];
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
