@@ -11,6 +11,7 @@
 		35055B1F1CF6EF8100E7FD72 /* exercisesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35055B1E1CF6EF8100E7FD72 /* exercisesViewController.m */; };
 		353222791D0022C8005DA5FD /* Part1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353222781D0022C8005DA5FD /* Part1ViewController.m */; };
 		354A00DA1D01549200607207 /* Part1View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354A00D91D01549200607207 /* Part1View.xib */; };
+		354E85431D0FF7F600226358 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E85421D0FF7F600226358 /* PostDetailsViewController.m */; };
 		357AD4591CF6C6D100BA2063 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD4391CF6C6D100BA2063 /* MKAnnotationView+WebCache.m */; };
 		357AD45A1CF6C6D100BA2063 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD43B1CF6C6D100BA2063 /* NSData+ImageContentType.m */; };
 		357AD45B1CF6C6D100BA2063 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD43D1CF6C6D100BA2063 /* SDImageCache.m */; };
@@ -71,6 +72,8 @@
 		353222771D0022C8005DA5FD /* Part1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part1ViewController.h; sourceTree = "<group>"; };
 		353222781D0022C8005DA5FD /* Part1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part1ViewController.m; sourceTree = "<group>"; };
 		354A00D91D01549200607207 /* Part1View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Part1View.xib; sourceTree = "<group>"; };
+		354E85411D0FF7F600226358 /* PostDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostDetailsViewController.h; sourceTree = "<group>"; };
+		354E85421D0FF7F600226358 /* PostDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
 		357AD4321CF6BA0B00BA2063 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		357AD4381CF6C6D100BA2063 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		357AD4391CF6C6D100BA2063 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -167,6 +170,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		354E85401D0FF7DC00226358 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				354E85411D0FF7F600226358 /* PostDetailsViewController.h */,
+				354E85421D0FF7F600226358 /* PostDetailsViewController.m */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
 		354FFB3D1CFEC735002F1272 /* Part1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +298,7 @@
 				354FFB3D1CFEC735002F1272 /* Part1 */,
 				354FFB3E1CFEC735002F1272 /* Part2_3 */,
 				35B3B6871D0659F900ED9CDE /* Intelligence */,
+				354E85401D0FF7DC00226358 /* PostDetails */,
 				359809B71CF6A50F00E63B53 /* AppDelegate.h */,
 				359809B81CF6A50F00E63B53 /* AppDelegate.m */,
 				359809BD1CF6A50F00E63B53 /* Main.storyboard */,
@@ -488,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				357AD47C1CF6C6D900BA2063 /* AFURLSessionManager.m in Sources */,
+				354E85431D0FF7F600226358 /* PostDetailsViewController.m in Sources */,
 				357AD4661CF6C6D100BA2063 /* UIImageView+HighlightedWebCache.m in Sources */,
 				35E99F221CFD7D580090B8AC /* exercisesTableViewCell.m in Sources */,
 				357AD45A1CF6C6D100BA2063 /* NSData+ImageContentType.m in Sources */,

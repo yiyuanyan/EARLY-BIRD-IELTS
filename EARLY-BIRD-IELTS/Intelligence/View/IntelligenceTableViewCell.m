@@ -62,16 +62,42 @@
     contentLabel.text = info[@"content"];
     contentLabel.font = [UIFont fontWithName:@"Arial" size:14];
     contentLabel.numberOfLines = 0;
-    NSLog(@"%lu",[info[@"images"] count]);
+    
     int imageCount = (int)[info[@"images"] count];
+    float y = contentLabel.frame.origin.y+contentLabel.frame.size.height;
+    int cellHeight = y;
     if(imageCount == 1){
         //一张图片
-        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, y+5, kWidth/3 * 2, 230)];
+        [imageView sd_setImageWithURL:info[@"images"][0][@"middle_image"]];
+        [self.contentView addSubview:imageView];
+        cellHeight = cellHeight+110;
     }else if(imageCount > 1 && imageCount < 4){
         //2~3张图片
-    
+        for(int i=1;i<=imageCount;i++){
+            int j = i-1;
+            
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5+(100*j)+(5*j), y+5, (kWidth-15)/3, (kWidth-15)/3)];
+            [imageView sd_setImageWithURL:info[@"images"][j][@"middle_image"]];
+            [self.contentView addSubview:imageView];
+        }
+        cellHeight += (kWidth-15)/3 + 5;
     }else if(imageCount > 3 && imageCount < 7){
         //4~6张图片
+        for(int i=1;i<=imageCount;i++){
+            int j = i-1;
+            int a = 0;
+            if(i<=3){
+                a = y+5;
+            }else if(i>3 && i<=6){
+                j = i - 4;
+                a = y+5+100+5;
+            }
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(5+(100*j)+(5*j), a, (kWidth-15)/3, (kWidth-15)/3)];
+            [imageView sd_setImageWithURL:info[@"images"][j][@"middle_image"]];
+            [self.contentView addSubview:imageView];
+        }
+        cellHeight += ((kWidth-15)/3)*2+10;
     }
     
     
@@ -79,6 +105,7 @@
     [self.contentView addSubview:contentLabel];
     //头像、名称、学校和时间的容器
     [self.contentView addSubview:titleView];
+    NSLog(@"%d",cellHeight);
 }
 //计算文本SIZE
 -(CGSize)getStringSize:(NSString *)string{
