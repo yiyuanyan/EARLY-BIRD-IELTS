@@ -10,8 +10,10 @@
 #import "IntelligenceTableViewCell.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
-#import "PostDetailsViewController.h"
+//#import "PostDetailsViewController.h"
+#import "PostInfoViewController.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
+#define kFont [UIFont fontWithName:@"Arial" size:14]
 @interface IntelligenceViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic, strong)UIScrollView *topScrollView;
 @property(nonatomic, strong) UIScrollView *shoolScrollView;
@@ -42,7 +44,7 @@
     
     [self createTopScrollView];
     [self createRecommend];
-    [self getNetWorkingJSON:@"http://testapp.benniaoyasi.com/api.php?m=api&c=Nbbs&a=listBbs&appid=1&school_id=1&devtype=ios&version=1.0.1&device=iphone5s&mobile=18610905643&uuid=01775B6A-D165-4CBE-8690-7FDA7DE875FE"];
+    [self getNetWorkingJSON:@"http://testapp.benniaoyasi.com/api.php?m=api&c=Nbbs&a=listBbs&appid=1&school_id=0&devtype=ios&version=1.0.1&device=iphone5s&mobile=18610905643&uuid=01775B6A-D165-4CBE-8690-7FDA7DE875FE"];
     
     
     [self.view addSubview:self.shoolScrollView];
@@ -54,13 +56,16 @@
 }
 #pragma --mark  自定义方法
 -(void)getNetWorkingJSON:(NSString *)url{
+    NSLog(@"%@",url);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         if([responseObject[@"ecode"] isEqualToString:@"0"]){
-            self.info = responseObject[@"edata"];
+            self.info = responseObject[@"edata"][@"bbs"];
+            
             [self createTableView];
             [self.tableView reloadData];
         }
@@ -156,7 +161,7 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.info.count;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -164,7 +169,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostDetailsViewController *post = [[PostDetailsViewController alloc] init];
+    PostInfoViewController *post = [[PostInfoViewController alloc] init];
     post.title = @"情报";
     post.postId = self.info[indexPath.row][@"id"];
     [self.navigationController pushViewController:post animated:YES];
@@ -186,6 +191,7 @@
 }
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
      IntelligenceTableViewCell *cell = [[IntelligenceTableViewCell alloc] init];
+     
      cell.info = self.info[indexPath.row];
      tableView.separatorStyle = UITableViewCellSelectionStyleNone;
      if(indexPath.row % 2 == 0){
@@ -226,7 +232,8 @@
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [titleView addSubview:timeLabel];
     //内容
-    CGSize strSize = [self getStringSize:info[@"content"]];
+    //CGSize strSize = [self getStringSize:info[@"content"]];
+    CGSize strSize = [self boundingRectWithSize:CGSizeMake(kWidth, 0) string:info[@"content"]];
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, headImageView.frame.origin.y+headImageView.frame.size.height+5, kWidth-10, strSize.height)];
     contentLabel.text = info[@"content"];
     contentLabel.font = [UIFont fontWithName:@"Arial" size:14];
@@ -277,6 +284,20 @@
 -(CGSize)getStringSize:(NSString *)string{
     CGSize strSize = [string boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, MAXFLOAT) options:NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Arial" size:14]} context:nil].size;
     return strSize;
+}
+- (CGSize)boundingRectWithSize:(CGSize)size string:(NSString *)string
+{
+    NSDictionary *attribute = @{NSFontAttributeName: kFont};
+    
+    CGSize retSize = [string boundingRectWithSize:size
+                                          options:\
+                      NSStringDrawingTruncatesLastVisibleLine |
+                      NSStringDrawingUsesLineFragmentOrigin |
+                      NSStringDrawingUsesFontLeading
+                                       attributes:attribute
+                                          context:nil].size;
+    
+    return retSize;
 }
 #pragma mark --scrollView
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

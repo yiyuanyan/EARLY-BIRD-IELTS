@@ -10,6 +10,7 @@
 //#import "SDWebImage/UIImageView+WebCache.h"
 #import "UIImageView+WebCache.h"
 #define kWidth [UIScreen mainScreen].bounds.size.width
+#define kFont [UIFont fontWithName:@"Arial" size:14]
 @implementation IntelligenceTableViewCell
 
 - (void)awakeFromNib {
@@ -57,11 +58,14 @@
     timeLabel.textAlignment = NSTextAlignmentCenter;
     [titleView addSubview:timeLabel];
     //内容
-    CGSize strSize = [self getStringSize:info[@"content"]];
-    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, headImageView.frame.origin.y+headImageView.frame.size.height+5, kWidth-10, strSize.height)];
+    //CGSize strSize = [self getStringSize:info[@"content"]];
+    CGSize strSize = [self boundingRectWithSize:CGSizeMake(kWidth, 0) string:info[@"content"]];
+    UILabel *contentLabel = [[UILabel alloc] init];
+    NSLog(@"%f",strSize.height);
     contentLabel.text = info[@"content"];
     contentLabel.font = [UIFont fontWithName:@"Arial" size:14];
     contentLabel.numberOfLines = 0;
+    [contentLabel setFrame:CGRectMake(5, headImageView.frame.origin.y+headImageView.frame.size.height+5, kWidth-10, strSize.height)];
     
     int imageCount = (int)[info[@"images"] count];
     float y = contentLabel.frame.origin.y+contentLabel.frame.size.height;
@@ -105,11 +109,24 @@
     [self.contentView addSubview:contentLabel];
     //头像、名称、学校和时间的容器
     [self.contentView addSubview:titleView];
-    NSLog(@"%d",cellHeight);
 }
 //计算文本SIZE
 -(CGSize)getStringSize:(NSString *)string{
     CGSize strSize = [string boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, MAXFLOAT) options:NSStringDrawingUsesDeviceMetrics attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Arial" size:14]} context:nil].size;
     return strSize;
+}
+- (CGSize)boundingRectWithSize:(CGSize)size string:(NSString *)string
+{
+    NSDictionary *attribute = @{NSFontAttributeName: kFont};
+    
+    CGSize retSize = [string boundingRectWithSize:size
+                                             options:\
+                      NSStringDrawingTruncatesLastVisibleLine |
+                      NSStringDrawingUsesLineFragmentOrigin |
+                      NSStringDrawingUsesFontLeading
+                                          attributes:attribute
+                                             context:nil].size;
+    
+    return retSize;
 }
 @end

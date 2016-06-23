@@ -12,6 +12,7 @@
 		353222791D0022C8005DA5FD /* Part1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 353222781D0022C8005DA5FD /* Part1ViewController.m */; };
 		354A00DA1D01549200607207 /* Part1View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354A00D91D01549200607207 /* Part1View.xib */; };
 		354E85431D0FF7F600226358 /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 354E85421D0FF7F600226358 /* PostDetailsViewController.m */; };
+		3569988B1D13E76B00944CE5 /* PostInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3569988A1D13E76B00944CE5 /* PostInfoViewController.m */; };
 		357AD4591CF6C6D100BA2063 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD4391CF6C6D100BA2063 /* MKAnnotationView+WebCache.m */; };
 		357AD45A1CF6C6D100BA2063 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD43B1CF6C6D100BA2063 /* NSData+ImageContentType.m */; };
 		357AD45B1CF6C6D100BA2063 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD43D1CF6C6D100BA2063 /* SDImageCache.m */; };
@@ -34,6 +35,8 @@
 		357AD47A1CF6C6D900BA2063 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD4721CF6C6D900BA2063 /* AFURLRequestSerialization.m */; };
 		357AD47B1CF6C6D900BA2063 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD4741CF6C6D900BA2063 /* AFURLResponseSerialization.m */; };
 		357AD47C1CF6C6D900BA2063 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 357AD4761CF6C6D900BA2063 /* AFURLSessionManager.m */; };
+		357E38C01D10FE8F00951A93 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 357E38BF1D10FE8F00951A93 /* MBProgressHUD.m */; };
+		3580272C1D1259BA00539349 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3580272B1D1259BA00539349 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		359809B61CF6A50F00E63B53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809B51CF6A50F00E63B53 /* main.m */; };
 		359809B91CF6A50F00E63B53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 359809B81CF6A50F00E63B53 /* AppDelegate.m */; };
 		359809BF1CF6A50F00E63B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359809BD1CF6A50F00E63B53 /* Main.storyboard */; };
@@ -74,6 +77,8 @@
 		354A00D91D01549200607207 /* Part1View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Part1View.xib; sourceTree = "<group>"; };
 		354E85411D0FF7F600226358 /* PostDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostDetailsViewController.h; sourceTree = "<group>"; };
 		354E85421D0FF7F600226358 /* PostDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDetailsViewController.m; sourceTree = "<group>"; };
+		356998891D13E76B00944CE5 /* PostInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostInfoViewController.h; sourceTree = "<group>"; };
+		3569988A1D13E76B00944CE5 /* PostInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfoViewController.m; sourceTree = "<group>"; };
 		357AD4321CF6BA0B00BA2063 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		357AD4381CF6C6D100BA2063 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		357AD4391CF6C6D100BA2063 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
@@ -121,6 +126,10 @@
 		357AD4741CF6C6D900BA2063 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		357AD4751CF6C6D900BA2063 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		357AD4761CF6C6D900BA2063 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		357E38BE1D10FE8F00951A93 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		357E38BF1D10FE8F00951A93 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		3580272A1D1259BA00539349 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		3580272B1D1259BA00539349 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		359809B11CF6A50F00E63B53 /* EARLY-BIRD-IELTS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EARLY-BIRD-IELTS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		359809B51CF6A50F00E63B53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		359809B71CF6A50F00E63B53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +184,8 @@
 			children = (
 				354E85411D0FF7F600226358 /* PostDetailsViewController.h */,
 				354E85421D0FF7F600226358 /* PostDetailsViewController.m */,
+				356998891D13E76B00944CE5 /* PostInfoViewController.h */,
+				3569988A1D13E76B00944CE5 /* PostInfoViewController.m */,
 			);
 			path = PostDetails;
 			sourceTree = "<group>";
@@ -268,6 +279,24 @@
 			path = exercises;
 			sourceTree = "<group>";
 		};
+		357E38BD1D10FE7B00951A93 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				357E38BE1D10FE8F00951A93 /* MBProgressHUD.h */,
+				357E38BF1D10FE8F00951A93 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		358027291D1259B000539349 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				3580272A1D1259BA00539349 /* JSONKit.h */,
+				3580272B1D1259BA00539349 /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		359809A81CF6A50F00E63B53 = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +321,8 @@
 		359809B31CF6A50F00E63B53 /* EARLY-BIRD-IELTS */ = {
 			isa = PBXGroup;
 			children = (
+				358027291D1259B000539349 /* JSONKit */,
+				357E38BD1D10FE7B00951A93 /* MBProgressHUD */,
 				357AD4691CF6C6D900BA2063 /* AFNetworking */,
 				357AD4371CF6C6D100BA2063 /* SDWebImage */,
 				357AD47D1CF6C9F800BA2063 /* exercises */,
@@ -504,6 +535,8 @@
 				354E85431D0FF7F600226358 /* PostDetailsViewController.m in Sources */,
 				357AD4661CF6C6D100BA2063 /* UIImageView+HighlightedWebCache.m in Sources */,
 				35E99F221CFD7D580090B8AC /* exercisesTableViewCell.m in Sources */,
+				3580272C1D1259BA00539349 /* JSONKit.m in Sources */,
+				357E38C01D10FE8F00951A93 /* MBProgressHUD.m in Sources */,
 				357AD45A1CF6C6D100BA2063 /* NSData+ImageContentType.m in Sources */,
 				357AD4601CF6C6D100BA2063 /* SDWebImageManager.m in Sources */,
 				357AD45E1CF6C6D100BA2063 /* SDWebImageDownloader.m in Sources */,
@@ -526,6 +559,7 @@
 				35B3B68A1D065A1B00ED9CDE /* IntelligenceViewController.m in Sources */,
 				357AD4671CF6C6D100BA2063 /* UIImageView+WebCache.m in Sources */,
 				357AD45C1CF6C6D100BA2063 /* SDWebImageCompat.m in Sources */,
+				3569988B1D13E76B00944CE5 /* PostInfoViewController.m in Sources */,
 				357AD4631CF6C6D100BA2063 /* UIImage+GIF.m in Sources */,
 				353222791D0022C8005DA5FD /* Part1ViewController.m in Sources */,
 				357AD47A1CF6C6D900BA2063 /* AFURLRequestSerialization.m in Sources */,
@@ -627,6 +661,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
