@@ -193,14 +193,23 @@
     praiseLabel.text = [NSString stringWithFormat:@"%@人赞了该帖",info[@"praise_num"]];
     praiseLabel.textAlignment = NSTextAlignmentCenter;
     [praiseView addSubview:praiseLabel];
+    //点赞人头像
     float imgViewX = praiseLabel.frame.origin.x+praiseLabel.frame.size.width;
     for(int i=0;i<[info[@"praise_info"] count];i++){
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(imgViewX, 30, 30, 30)];
         [imgView sd_setImageWithURL:[NSURL URLWithString:info[@"praise_info"][i][@"uimage"]]];
+        UILabel *praiseNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(imgViewX, imgView.frame.origin.y+imgView.frame.size.height, 30, 15)];
+        praiseNameLabel.font = [UIFont fontWithName:@"Arial" size:10];
+        praiseNameLabel.text = info[@"praise_info"][i][@"uname"];
+        praiseNameLabel.textAlignment = NSTextAlignmentCenter;
+        praiseNameLabel.textColor = [UIColor colorWithRed:200/255.0 green:200/255.0 blue:200/255.0 alpha:1];
         imgViewX += 40;
         [praiseView addSubview:imgView];
+        [praiseView addSubview:praiseNameLabel];
+        
     }
     [self.scrollView addSubview:praiseView];
+    
     
     
     
